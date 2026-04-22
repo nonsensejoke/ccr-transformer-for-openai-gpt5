@@ -1,0 +1,36 @@
+"transformers": [
+    {
+      "name": "",
+      "path": "/Users/xxx/.claude-code-router/plugins/openai-compat.js",
+      "options": {}
+    }
+  ],
+....
+
+
+    {
+      "name": "openai-official",
+      "api_base_url": "https://api.openai.com/v1/chat/completions",
+      "api_key": "sk-proj-aaaaaaaa",
+      "models": [
+        "gpt-5.4-mini",
+        "gpt-5.4"
+      ],
+      "transformer": {
+        "use": [
+          "openai-compat",
+          "OpenAI",
+          "maxcompletiontokens"
+        ],
+        "gpt-5.4-mini": {
+          "use": [
+            "maxtoken"
+          ]
+        },
+        "gpt-5.4": {
+          "use": [
+            "maxcompletiontokens"
+          ]
+        }
+      }
+    }
